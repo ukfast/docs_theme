@@ -12,7 +12,6 @@
 # serve to show the default.
 
 import sys, os
-#import sphinx_rtd_theme
 from recommonmark.parser import CommonMarkParser
 import recommonmark
 from recommonmark.transform import AutoStructify
@@ -97,7 +96,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  Major themes that come with
 # Sphinx are currently 'default' and 'sphinxdoc'.
-html_theme = 'cakephp'
+html_theme = 'sekhmet'
 #html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -183,13 +182,6 @@ htmlhelp_basename = 'UKFastdocsdoc'
 # The font size ('10pt', '11pt' or '12pt').
 #latex_font_size = '10pt'
 
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass [howto/manual]).
-latex_documents = [
-  ('index', 'UKFastdocs.tex', u'UKFast Documentation',
-   u'Sam Norbury', 'manual'),
-]
-
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
 #latex_logo = None
@@ -206,7 +198,7 @@ latex_documents = [
 
 # If false, no module index is generated.
 #latex_use_modindex = True
-doc_root = 'http://localhost:80/'
+doc_root = 'http://docs.ukfast.co.uk/'
 def setup(app):
     app.add_config_value('recommonmark_config', {
             'url_resolver': lambda url: doc_root + url,
