@@ -1,6 +1,6 @@
 App = {};
 App.config = {
-  url: 'http://search.docs.devops.ukfast.co.uk/',
+  url: 'https://search.docs.devops.ukfast.co.uk/',
   version: '2-2'
 };
 
