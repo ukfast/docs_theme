@@ -1,10 +1,5 @@
-if (/cakephp\.org/.test(document.domain)) {
-  document.domain = 'cakephp.org';
-}
-
 App = {};
 App.config = {
-  //url: 'http://search.cakephp.org/search',
   url: 'http://search.docs.devops.ukfast.co.uk/',
   version: '2-2'
 };
