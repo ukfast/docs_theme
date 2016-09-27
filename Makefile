@@ -95,28 +95,28 @@ doctest:
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
 populate-index: $(SPHINX_DEPENDENCIES)
-	php source/_themes/sekhmet/scripts/populate_search_index.php $* $(ES_HOST)
+	php source/_themes/ukf/scripts/populate_search_index.php $* $(ES_HOST)
 
 build/html/_static:
 	mkdir -p build/html/_static
 
-CSS_FILES = source/_themes/sekhmet/static/css/bootstrap.min.css \
-  source/_themes/sekhmet/static/css/font-awesome.min.css \
-  source/_themes/sekhmet/static/css/style.css \
-  source/_themes/sekhmet/static/css/default.css \
-  source/_themes/sekhmet/static/css/default.css \
-  source/_themes/sekhmet/static/css/pygments.css \
-  source/_themes/sekhmet/static/css/responsive.css
+CSS_FILES = source/_themes/ukf/static/css/bootstrap.min.css \
+  source/_themes/ukf/static/css/font-awesome.min.css \
+  source/_themes/ukf/static/css/style.css \
+  source/_themes/ukf/static/css/default.css \
+  source/_themes/ukf/static/css/default.css \
+  source/_themes/ukf/static/css/pygments.css \
+  source/_themes/ukf/static/css/responsive.css
 
 build/html/_static/css/app.css: build/html/_static $(CSS_FILES)
         # echo all dependencies ($$^) into the output ($$@)
 	cat $(CSS_FILES) > $@
 
-JS_FILES = source/_themes/sekhmet/static/jquery.js \
-  source/_themes/sekhmet/static/vendor.js \
-  source/_themes/sekhmet/static/app.js \
-  source/_themes/sekhmet/static/search.js \
-  source/_themes/sekhmet/static/typeahead.js
+JS_FILES = source/_themes/ukf/static/jquery.js \
+  source/_themes/ukf/static/vendor.js \
+  source/_themes/ukf/static/app.js \
+  source/_themes/ukf/static/search.js \
+  source/_themes/ukf/static/typeahead.js
 
 build/html/_static/app.js: build/html/_static $(JS_FILES)
         # echo all dependencies ($JS_FILES) into the output ($$@)
