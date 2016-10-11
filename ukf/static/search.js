@@ -36,6 +36,7 @@ App.Search = (function () {
 
   function executeSearch(value, page) {
     value = value.replace('/', '\\/');
+    value = value + '*';
     var query = {lang: window.lang, q: value, version: App.config.version};
     if (page) {
       query.page = page;
