@@ -198,7 +198,7 @@ htmlhelp_basename = 'UKFastdocsdoc'
 
 # If false, no module index is generated.
 #latex_use_modindex = True
-doc_root = 'http://livedocs.devops.ukfast.co.uk/'
+doc_root = 'https://docs.ukfast.co.uk/'
 def setup(app):
     app.add_config_value('recommonmark_config', {
             'url_resolver': lambda url: doc_root + url,
