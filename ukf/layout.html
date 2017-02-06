@@ -204,21 +204,20 @@
 {%- block content %}
 <div class="container page-container">
 
-	{%- if pagename != 'search' -%}
+	{%- if 'index' in pagename -%}
     <div id="improve-slideout">
 		<i class="fa fa-pencil icon-improve"></i>
-		<a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.md" target="_blank">
+		<a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.rst" target="_blank">
 			<div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-github git-improve"></i></h6></div>
 		</a>
 	</div>
-    {%- if pagename ~ 'index' %}
+    {%- elif pagename != 'search' and pagename != 'index' -%}
       <div id="improve-slideout">
       <i class="fa fa-pencil icon-improve"></i>
-      <a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.rst" target="_blank">
+      <a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.md" target="_blank">
         <div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-github git-improve"></i></h6></div>
       </a>
       </div>
-    {%- endif -%}
 	{%- endif -%}
 	<a id="back-to-contents" href="#page-contents"><i class="fa fa-arrow-circle-up icon-improve" title="Back to Contents"></i></a>
 
