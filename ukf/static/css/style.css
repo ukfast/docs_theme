@@ -297,7 +297,7 @@ iframe {
 .menu > li > a {
     padding: 25px 35px;
     font-size: 13px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-weight:400;
     display: inline-block;
     color: #fff;
@@ -416,7 +416,7 @@ iframe {
     font-size:14px;
     color:inherit;
     padding:0 0 6px;
-    text-transform:capitalize;
+    /* text-transform:capitalize; */
     letter-spacing: 1px;
     font-weight:600;
 }
