@@ -146,7 +146,7 @@
 /* -- Sidebar -- */
 .sidebar li {
     list-style: none;
-    /* text-transform: capitalize; */
+    text-transform: none;
     letter-spacing: 0.04em;
     font-weight: 500;
     font-size: 13px;
@@ -665,4 +665,58 @@ dt tt {
 }
 .genindextable a {
     font-size: 14px;
+}
+
+
+/* Structure */
+
+* {
+    box-sizing: border-box;
+}
+.grid-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+.row:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.grid-4, .grid-3 {
+    padding: 0 15px;
+    display: block;
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Boxes */
+a.box {
+    background-color: #ebeff0;
+    text-align: center;
+    padding: 40px;
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    font-size: 25px;
+}
+a.box:hover {
+    background-color: #e6eaeb;
+}
+a.box i {
+    font-size: 44px;
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+    .grid-4 {
+        width: 33.333333%;
+    }
+    .grid-3 {
+        width: 25%;
+    }
 }

@@ -93,10 +93,6 @@
 				<div class="col-sm-9 col-md-9">
 					<nav class="navbar-right">
 						<ul class="menu">
-                            <!--
-							<li><a href="#">Menu Item</a></li>
-							<li><a href="#">Menu Item</a></li>
-                            -->
 							<li>
 								<a href="#"><i class="fa fa-menu fa-chevron-down"></i>Help & Support</a>
 								<div class="megamenu full">
@@ -204,25 +200,71 @@
 {%- block content %}
 <div class="container page-container">
 
-	{%- if 'index' in pagename -%}
-    <div id="improve-slideout">
-		<i class="fa fa-pencil icon-improve"></i>
-		<a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.rst" target="_blank">
-			<div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-github git-improve"></i></h6></div>
-		</a>
-	</div>
-    {%- elif pagename != 'search' and pagename != 'index' -%}
+  {%- if 'index' in pagename and pagename != 'index' -%}
       <div id="improve-slideout">
-      <i class="fa fa-pencil icon-improve"></i>
-      <a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.md" target="_blank">
-        <div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-github git-improve"></i></h6></div>
-      </a>
-      </div>
-	{%- endif -%}
+  		<i class="fa fa-pencil icon-improve"></i>
+  		<a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.rst" target="_blank">
+  			<div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-github git-improve"></i></h6></div>
+  		</a>
+  	</div>
+      {%- elif pagename != 'search' and pagename != 'index' -%}
+        <div id="improve-slideout">
+        <i class="fa fa-pencil icon-improve"></i>
+        <a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.md" target="_blank">
+          <div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-github git-improve"></i></h6></div>
+        </a>
+        </div>
+  {%- endif -%}
+
 	<a id="back-to-contents" href="#page-contents"><i class="fa fa-arrow-circle-up icon-improve" title="Back to Contents"></i></a>
 
-	{# Document body #}
+
+
 	<div class="row">
+
+  {## Grid layout on root index only ##}
+  {%- if pagename == 'index' -%}
+
+  <h1>Welcome to the UKFast documentation centre<a class="headerlink" href="#welcome-to-the-ukfast-documentation-centre" title="Permalink to this headline">¶</a></h1>
+  <p>For help with UKFast products and services, and guidance with common hosting technology.</p>
+
+  <div class="grid-container">
+        {% set theTocTree = toctree()
+        | replace("</a>", "")
+        | replace(" href=\"", "></a>")
+        | replace("</li>", "</li>;")
+        | striptags
+        | replace("\">", "%") %}
+    {% set theTocTree = theTocTree.split(";") %}
+
+    {% set count = 0 %}
+    {% set open = 0 %}
+    {% for element in theTocTree if element != "" %}
+      {% set el = element.split("%") %}
+      {% set url = el[0] | trim | safe %}
+      {% set entry = el[1] | trim | safe %}
+      {% if count%3 == 0  and open != 1 %}
+        <div class="row">
+        {% set open = 1 %}
+      {% endif %}
+        <div class="grid-4">
+          <a href="{{url}}" class="box">
+            <i class="fa fa-book"></i>
+            <p>{{entry}}</p>
+          </a>
+        </div>
+      {% set count = count + 1 %}
+      {% if count%3 == 0 and open == 1 %}
+        </div>
+        {% set open = 0 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <p>You can help make this documentation better on Github.  Just click on the pencil icon on the right hand side of any page.</p>
+
+    {%- else -%}
+
 		<div class="col-sm-12 col-md-9 col-md-push-3 space-left push-off">
 			{%- if pagename != 'search' and pagename != 'contents' and pagename != 'index' -%}
 			<div class="page-contents col-sm-5">
@@ -235,6 +277,8 @@
 			{% block body %} {% endblock %}
 			</div>
 		</div>
+
+		{%- endif -%}
 
 		{# TOC sidebar #}
 		<div class="col-md-3 col-md-pull-9 pull-off hidden-xs hidden-sm" lang="{{ language }}">
@@ -317,7 +361,7 @@
 		<div class="row">
 			<div class="col-md-12 text-center mt30">
 				<p class="copyright">
-					© UKFast.Net Ltd 1999 - 2016 UK's Best Dedicated Server Web Hosting | <a href="https://www.ukfast.co.uk/terms.html?tab=privacypolicy&#setupoption">Privacy Policy</a> | <a href="http://www.ukfast.co.uk/support.html">Support</a> | <a href="https://www.ukfast.co.uk/corporate-guidance.html">Corporate Guidance</a> | <a href="https://www.ukfast.co.uk/sitemap.html">Sitemap</a><br>UKFast.Net Limited, Registered in England, Company Registration Number 03845616, Registered Office: UKFast Campus, Birley Fields, Manchester, England, M15 5QJ
+					© UKFast.Net Ltd 1999 - 2017 UK's Best Dedicated Server Web Hosting | <a href="https://www.ukfast.co.uk/terms.html?tab=privacypolicy&#setupoption">Privacy Policy</a> | <a href="http://www.ukfast.co.uk/support.html">Support</a> | <a href="https://www.ukfast.co.uk/corporate-guidance.html">Corporate Guidance</a> | <a href="https://www.ukfast.co.uk/sitemap.html">Sitemap</a><br>UKFast.Net Limited, Registered in England, Company Registration Number 03845616, Registered Office: UKFast Campus, Birley Fields, Manchester, England, M15 5QJ
 				</p>
 			</div>
 		</div>
