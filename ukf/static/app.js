@@ -1,7 +1,7 @@
 App = {};
 App.config = {
-  url: 'https://search.docs.devops.ukfast.co.uk/',
-  version: '2-2'
+  url: 'https://docs-search.ukfast.co.uk/',
+  version: '2-3'
 };
 
 App.Book = (function() {
