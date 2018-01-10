@@ -254,9 +254,10 @@
           </a>
         </div>
       {% set count = count + 1 %}
-      {% if count%3 == 0 and open == 1 %}
+      {% if count%3 == 1 and open == 1 %}
         </div>
         {% set open = 0 %}
+        {% set count = 0 %}
       {% endif %}
     {% endfor %}
   </div>
