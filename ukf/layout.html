@@ -237,13 +237,12 @@
         | replace("\">", "%") %}
     {% set theTocTree = theTocTree.split(";") %}
 
-    {% set count = 0 %}
     {% set open = 0 %}
     {% for element in theTocTree if element != "" %}
       {% set el = element.split("%") %}
       {% set url = el[0] | trim | safe %}
       {% set entry = el[1] | trim | safe %}
-      {% if count%3 == 0  and open != 1 %}
+      {% if loop.index%3 == 0  and open != 1 %}
         <div class="row">
         {% set open = 1 %}
       {% endif %}
@@ -253,11 +252,9 @@
             <p>{{entry}}</p>
           </a>
         </div>
-      {% set count = count + 1 %}
-      {% if count%3 == 1 and open == 1 %}
+      {% if loop.index%3 == 0 and open == 1 %}
         </div>
         {% set open = 0 %}
-        {% set count = 0 %}
       {% endif %}
     {% endfor %}
   </div>
