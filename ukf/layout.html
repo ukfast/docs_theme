@@ -203,15 +203,15 @@
   {%- if 'index' in pagename and pagename != 'index' -%}
       <div id="improve-slideout">
   		<i class="fa fa-pencil icon-improve"></i>
-  		<a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.rst" target="_blank">
-  			<div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-github git-improve"></i></h6></div>
+  		<a href="https://gitlab.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.rst" target="_blank">
+  			<div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-gitlab git-improve"></i></h6></div>
   		</a>
   	</div>
       {%- elif pagename != 'search' and pagename != 'index' -%}
         <div id="improve-slideout">
         <i class="fa fa-pencil icon-improve"></i>
-        <a href="https://github.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.md" target="_blank">
-          <div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-github git-improve"></i></h6></div>
+        <a href="https://gitlab.com/ukfast/docs.ukfast.co.uk/edit/master/source/{{ pagename }}.md" target="_blank">
+          <div id="improve-slideout-inner"><h6>Improve This Doc <i class="fa fa-gitlab git-improve"></i></h6></div>
         </a>
         </div>
   {%- endif -%}
@@ -259,7 +259,7 @@
     {% endfor %}
   </div>
 
-  <p>You can help make this documentation better on Github.  Just click on the pencil icon on the right hand side of any page.</p>
+  <p>You can help make this documentation better on GitLab.  Just click on the pencil icon on the right hand side of any page.</p>
 
     {%- else -%}
 
