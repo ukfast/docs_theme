@@ -247,7 +247,7 @@
         {% set open = 1 %}
       {% endif %}
         <div class="grid-4">
-          <a href="{{url}}" class="box">
+          <a href="{{ url | replace('/index.html', '/') }}" class="box">
             <i class="fa fa-book"></i>
             <p>{{entry}}</p>
           </a>
@@ -290,7 +290,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 social-footer text-center ">
-				<a href="https://twitter.com/UKFast" data-toggle="tooltip" title="Twitter"><i class="fa icon-social fa-twitter"></i>
+				<a href="https://twitter.com/UKFast" data-toggle="tooltip" title="Twitter"><i class="fa icon-social fa-twitter"></i></a>
 				<a href="https://www.facebook.com/UKFast.co.uk" data-toggle="tooltip" title="Facebook"><i class="fa icon-social fa-facebook"></i></a>
 				<a href="https://plus.google.com/+ukfast/posts" data-toggle="tooltip" title="Google Plus"><i class="fa icon-social  fa-google-plus"></i></a>
 				<a href="https://www.youtube.com/user/UKFast" data-toggle="tooltip" title="Youtube"><i class="fa icon-social fa-youtube-play"></i></a>
