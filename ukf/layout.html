@@ -240,7 +240,7 @@
     {% set open = 0 %}
     {% for element in theTocTree if element != "" %}
       {% set el = element.split("%") %}{% set url = el[0] | trim | safe %}{% set entry = el[1] | trim | safe %}
-	  <div>
+	  <div class="grid-item">
 		  <a href="{{ url | replace('/index.html', '/') }}" class="box">
 			  <i class="fa fa-book"></i>
 			  <p>{{entry}}</p>
