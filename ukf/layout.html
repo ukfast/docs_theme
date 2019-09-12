@@ -239,23 +239,13 @@
 
     {% set open = 0 %}
     {% for element in theTocTree if element != "" %}
-      {% set el = element.split("%") %}
-      {% set url = el[0] | trim | safe %}
-      {% set entry = el[1] | trim | safe %}
-      {% if loop.index%3 == 0  and open != 1 %}
-        <div class="row">
-        {% set open = 1 %}
-      {% endif %}
-        <div class="grid-4">
-          <a href="{{ url | replace('/index.html', '/') }}" class="box">
-            <i class="fa fa-book"></i>
-            <p>{{entry}}</p>
-          </a>
-        </div>
-      {% if loop.index%3 == 0 and open == 1 %}
-        </div>
-        {% set open = 0 %}
-      {% endif %}
+      {% set el = element.split("%") %}{% set url = el[0] | trim | safe %}{% set entry = el[1] | trim | safe %}
+	  <div>
+		  <a href="{{ url | replace('/index.html', '/') }}" class="box">
+			  <i class="fa fa-book"></i>
+			  <p>{{entry}}</p>
+		  </a>
+	  </div>
     {% endfor %}
   </div>
 
